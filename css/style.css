@@ -6,7 +6,7 @@ body {
     font-family: 'Raleway', Calibri, Arial, sans-serif;
     background: #E4E4E8;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     color: #606777;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -96,7 +96,7 @@ a:active {
 }
 
 .hs-inner p {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 24px;
     text-align: justify;
     position: relative;
@@ -144,7 +144,7 @@ a.hs-totop-link {
     /* font-weight: 400; */
     
     margin-top: 30px;
-    font-size: 12px;
+    font-size: 14px;
     display: inline-block;
 }
 
@@ -152,7 +152,7 @@ a.hs-totop-link {
     padding: 9px 9px 9px 0;
     display: inline-block;
     color: #606777;
-    font-size: 12px;
+    font-size: 14px;
     font-family: Montserrat;
     position: relative;
 }
@@ -221,14 +221,14 @@ a.hs-totop-link {
 
 .hs-headline .profile_info h4 {
     text-align: center;
-    font-size: 13px;
+    font-size: 14px;
     margin: 10px 0;
     font-weight: 300;
 }
 
 .hs-headline .profile_info h6 {
     text-align: center;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     margin: 7px 0;
 }
@@ -314,7 +314,7 @@ a.hs-totop-link {
 }
 
 .hs-menu nav a .menu_name {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 40px;
     font-family: Montserrat;
@@ -429,7 +429,7 @@ a.hs-totop-link {
 
 .aside1 .aside-content .part2 {
     font-weight: 300;
-    font-size: 13px;
+    font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #788195;
@@ -531,7 +531,7 @@ ul.marquee {
     overflow: hidden;
     height: 50px;
     line-height: 50px;
-    font-size: 13px;
+    font-size: 14px;
     margin-right: 22px;
 }
 

@@ -1,25 +1,72 @@
-<!DOCTYPE html>
+
+<!doctype html>
+<html class="no-js" lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>ECharts</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>新媒体发展报告</title>
+<link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+<link href='http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
+ 
 </head>
 <body>
-    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div id="Baidu_Index" style="height:400px"></div>
-    <div id="China_Map" style="height:600px"></div>
-    <ul>
-    <div id="Gender" style="height:400px;width:600px;display:table-cell"></div>
-    <div id="Age" style="height:400px;width:600px;display:table-cell"></div>
-    </ul>
-    <ul>
-    <div id="Tags_Sina" style="height:400px;width:600px;display:table-cell"></div>
-    <div id="Tags_Wechat" style="height:400px;width:600px;display:table-cell"></div>
-    </ul> 
-    <!-- ECharts单文件引入 -->
-    <script src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>
-    <script type="text/javascript">
-        // 基于准备好的dom，初始化echarts图表
-        var myChart_BI = echarts.init(document.getElementById('Baidu_Index')); 
+ 
+<div class="callout large primary">
+<div class="row column text-center">
+<h1>从新浪微博与微信看中国新媒体发展</h1>
+<h2 class="subheader">数据新闻课程作业</h2>
+</div>
+</div>
+ 
+<div class="row medium-8 large-7 columns">
+<div class="blog-post">
+<h3>搜索热度</h3>
+<div id="Baidu_Index" style="height:280px"></div>
+<p>从2011年至今，新浪微博一直有着很高的搜索热度。然而从2011年7月开始，新浪微博的搜索热度逐渐开始降低，而微信诞生之后的搜索热度日趋增长。微信出现之前，新浪微博作为极少数的有较大用户量的新媒体平台被网民广泛介绍，但是在微信这一新平台之后，可以看出用户逐渐被分流。如图所示是2011年至今新浪微博和微信的搜索热度（来源：百度指数）。</p>
+</div>
+
+<div class="blog-post">
+<h3>地区热度</h3>
+<div id="China_Map" style="height:400px"></div>
+<p>下面两图展示了新浪微博和微信的地区热度（数据来源：新浪微指数）。可见，经济较发达地区和沿海地区对新媒体的关注度更高。</p>
+</div>
+
+<div class="blog-post">
+<h3>性别比例</h3>
+<div id="Gender" style="height:400px"></div>
+<p>从下图可以看出，新浪微博和微信的用户中女性都占多数。这说明女性群体对新媒体的关注程度更高，而男性群体则稍倾向于不使用类似的新媒体平台。</p>
+</div>
+
+<div class="blog-post">
+<h3>年龄比例</h3>
+<div>
+<ul>
+<div id="Age_Sina" style="height:280px;width:400px;display:table-cell"></div>
+<div id="Age_Wechat" style="height:280px;width:400px;display:table-cell"></div>
+</ul>
+</div>
+<p>从下面的两幅图可以看出，新浪微博和微信的用户群都较为年轻。其中新浪微博的平均年龄大于微信，这是因为微信有着新媒体平台以外的社交和游戏功能，而新浪微博则更倾向于社会化的传播。</p>
+</div>
+
+<div class="blog-post">
+<h3>话题标签</h3>
+<div>
+<ul>
+<div id="Tags_Sina" style="height:400px;width:400px;display:table-cell"></div>
+<div id="Tags_Wechat" style="height:400px;width:400px;display:table-cell"></div>
+</ul> 
+</div>
+<p>下面两幅图是新浪微博和微信的话题标签。可以看出，“自媒体”是新浪微博中一个重要的标签。可见，在媒体平台的属性上，新浪微博超过微信。从微信的标签中可以看出，大部分微信用户感兴趣的内容和新浪微博相似，然而相比于新浪微博，其话题更加私人化。</p>
+</div>
+
+</div>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+<script src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>
+<script type="text/javascript">
+      $(document).foundation();
+      
+      var myChart_BI = echarts.init(document.getElementById('Baidu_Index')); 
         
         var option_BI = {
     title : {
@@ -277,10 +324,10 @@
 };
         myChart_G.setOption(option_G);
         
-        var myChart_A = echarts.init(document.getElementById('Age'));
-        var option_A = {
+        var myChart_AS = echarts.init(document.getElementById('Age_Sina'));
+        var option_AS = {
             title : {
-        text: '用户年龄分布',
+        text: '新浪微博用户',
         x : 'center'
     },
     tooltip : {
@@ -295,8 +342,6 @@
     toolbox: {
         show : true,
         feature : {
-            mark : {show: true},
-            dataView : {show: true, readOnly: false},
             magicType : {
                 show: true, 
                 type: ['pie', 'funnel'],
@@ -350,7 +395,80 @@
         }
     ]
 };
-        myChart_A.setOption(option_A);
+        myChart_AS.setOption(option_AS);
+        
+        var myChart_AW = echarts.init(document.getElementById('Age_Wechat'));
+        var option_AW = {
+            title : {
+        text: '微信用户',
+        x : 'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        orient : 'vertical',
+        x : 'left',
+        data:['12岁以下','12-18岁','19-24岁','25-34岁','35-50岁','51-80岁']
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            magicType : {
+                show: true, 
+                type: ['pie', 'funnel'],
+                option: {
+                    funnel: {
+                        x: '25%',
+                        width: '50%',
+                        funnelAlign: 'center',
+                        max: 1548
+                    }
+                }
+            },
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    calculable : true,
+    series : [
+        {
+            name:'年龄分布',
+            type:'pie',
+            radius : ['50%', '70%'],
+            itemStyle : {
+                normal : {
+                    label : {
+                        show : false
+                    },
+                    labelLine : {
+                        show : false
+                    }
+                },
+                emphasis : {
+                    label : {
+                        show : true,
+                        position : 'center',
+                        textStyle : {
+                            fontSize : '30',
+                            fontWeight : 'bold'
+                        }
+                    }
+                }
+            },
+            data:[
+                {value:335, name:'12岁以下'},
+                {value:310, name:'12-18岁'},
+                {value:234, name:'19-24岁'},
+                {value:135, name:'25-34岁'},
+                {value:1548, name:'35-50岁'},
+                {value:1548, name:'51-80岁'}
+            ]
+        }
+    ]
+};
+        myChart_AW.setOption(option_AW);
         
         var myChart_TS = echarts.init(document.getElementById('Tags_Sina'));
         var option_TS = {
@@ -367,8 +485,6 @@
     toolbox: {
         show : true,
         feature : {
-            mark : {show: true},
-            dataView : {show: true, readOnly: false},
             restore : {show: true},
             saveAsImage : {show: true}
         }
@@ -423,8 +539,6 @@
     toolbox: {
         show : true,
         feature : {
-            mark : {show: true},
-            dataView : {show: true, readOnly: false},
             restore : {show: true},
             saveAsImage : {show: true}
         }
@@ -464,5 +578,6 @@
 };
         myChart_TW.setOption(option_TW);
         
-    </script>
+</script>
 </body>
+</html>

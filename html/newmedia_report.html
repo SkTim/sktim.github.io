@@ -19,22 +19,26 @@
 </div>
  
 <div class="row medium-8 large-7 columns">
+    
 <div class="blog-post">
 <h3>搜索热度</h3>
-<div id="Baidu_Index" style="height:280px"></div>
+<div id="Baidu_Index" style="height:400px"></div>
 <p>从2011年至今，新浪微博一直有着很高的搜索热度。然而从2011年7月开始，新浪微博的搜索热度逐渐开始降低，而微信诞生之后的搜索热度日趋增长。微信出现之前，新浪微博作为极少数的有较大用户量的新媒体平台被网民广泛介绍，但是在微信这一新平台之后，可以看出用户逐渐被分流。如图所示是2011年至今新浪微博和微信的搜索热度（来源：百度指数）。</p>
+<div id="Baidu_Index_PC" style="height:400px"></div>
+<div id="Baidu_Index_Mobile" style="height:400px"></div>
+<p>从上面的两张图中我们可以看出，在PC端，新浪微博的搜索热度仍然领先与微信，然而在移动端，微信的搜索热度远高于新浪微博。从这里可以看出，在移动端进行搜索的用户远远多于PC端。可见，中国的新媒体有着由PC端向移动端迁移的趋势。在智能手机较为普及的今天，越来越多的人倾向于在移动端管理自己的新媒体平台软件。</p>
 </div>
 
 <div class="blog-post">
 <h3>地区热度</h3>
 <div id="China_Map" style="height:400px"></div>
-<p>下面两图展示了新浪微博和微信的地区热度（数据来源：新浪微指数）。可见，经济较发达地区和沿海地区对新媒体的关注度更高。</p>
+<p>上面两图展示了新浪微博和微信的地区热度（数据来源：新浪微指数）。可见，经济较发达地区和沿海地区对新媒体的关注度更高。</p>
 </div>
 
 <div class="blog-post">
 <h3>性别比例</h3>
 <div id="Gender" style="height:400px"></div>
-<p>从下图可以看出，新浪微博和微信的用户中女性都占多数。这说明女性群体对新媒体的关注程度更高，而男性群体则稍倾向于不使用类似的新媒体平台。</p>
+<p>从上图可以看出，新浪微博和微信的用户中女性都占多数。这说明女性群体对新媒体的关注程度更高，而男性群体则稍倾向于不使用类似的新媒体平台。</p>
 </div>
 
 <div class="blog-post">
@@ -45,7 +49,7 @@
 <div id="Age_Wechat" style="height:280px;width:400px;display:table-cell"></div>
 </ul>
 </div>
-<p>从下面的两幅图可以看出，新浪微博和微信的用户群都较为年轻。其中新浪微博的平均年龄大于微信，这是因为微信有着新媒体平台以外的社交和游戏功能，而新浪微博则更倾向于社会化的传播。</p>
+<p>从上面的两幅图可以看出，新浪微博和微信的用户群都较为年轻。其中微信用户的平均年龄大于微博。</p>
 </div>
 
 <div class="blog-post">
@@ -56,7 +60,7 @@
 <div id="Tags_Wechat" style="height:400px;width:400px;display:table-cell"></div>
 </ul> 
 </div>
-<p>下面两幅图是新浪微博和微信的话题标签。可以看出，“自媒体”是新浪微博中一个重要的标签。可见，在媒体平台的属性上，新浪微博超过微信。从微信的标签中可以看出，大部分微信用户感兴趣的内容和新浪微博相似，然而相比于新浪微博，其话题更加私人化。</p>
+<p>上面两幅图是新浪微博和微信的话题标签。可以看出，新浪微博用户对于“搞笑幽默”相关话题较为关注，这也是因为微博上有大量以幽默段子为卖点的营销账号。此外，“自媒体”是新浪微博中一个重要的标签。可见，在媒体平台的属性上，新浪微博超过微信。从微信的标签中可以看出，大部分微信用户感兴趣的内容和新浪微博相似，然而相比于新浪微博，其话题更加私人化。</p>
 </div>
 
 </div>
@@ -71,7 +75,7 @@
         var option_BI = {
     title : {
         text: '百度指数',
-        subtext: '关键词搜索次数'
+        subtext: '关键词搜索热度'
     },
     tooltip : {
         trigger: 'axis'
@@ -83,7 +87,6 @@
         show : true,
         feature : {
             mark : {show: true},
-            dataView : {show: true, readOnly: false},
             magicType : {show: true, type: ['line', 'bar']},
             restore : {show: true},
             saveAsImage : {show: true},
@@ -101,7 +104,7 @@
         {
             type : 'category',
             boundaryGap : false,
-            data : ['周一','周二','周三','周四','周五','周六','周日']
+            data : ['2011.1','2011.7','2012.1','2012.7','2013.1','2013.7','2014.1','2014.7','2015.1','2015.7']
         }
     ],
     yAxis : [
@@ -115,19 +118,143 @@
             type:'line',
             smooth:true,
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
-            data:[10, 12, 21, 54, 260, 830, 710]
+            data:[221853,598691,434834,494258,361433,340822,248023,217486,245872,287292]
         },
         {
             name:'微信',
             type:'line',
             smooth:true,
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
-            data:[30, 182, 434, 791, 390, 30, 10]
+            data:[0,75811,229368,242653,274657,325905,358016,494040,528709,741624]
         }
     ]
 };
         // 为echarts对象加载数据 
         myChart_BI.setOption(option_BI);
+        
+        var myChart_BI_PC = echarts.init(document.getElementById('Baidu_Index_PC')); 
+        
+        var option_BI_PC = {
+    title : {
+        text: '百度指数(PC端)',
+        subtext: '关键词搜索热度'
+    },
+    tooltip : {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['新浪微博','微信']
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            magicType : {show: true, type: ['line', 'bar']},
+            restore : {show: true},
+            saveAsImage : {show: true},
+            dataZoom : {show: true}
+        }
+    },
+    calculable : true,
+    dataZoom : {
+        show : true,
+        realtime : true,
+        start : 0,
+        end : 100
+    },
+    xAxis : [
+        {
+            type : 'category',
+            boundaryGap : false,
+            data : ['2011.1','2011.7','2012.1','2012.7','2013.1','2013.7','2014.1','2014.7','2015.1','2015.7']
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    series : [
+        {
+            name:'新浪微博',
+            type:'line',
+            smooth:true,
+            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+            data:[173838,480164,374251,430646,277348,280191,170756,151232,149654,165991]
+        },
+        {
+            name:'微信',
+            type:'line',
+            smooth:true,
+            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+            data:[0,51300,44964,46778,41775,53637,53826,69252,48307,82643]
+        }
+    ]
+};
+        // 为echarts对象加载数据 
+        myChart_BI_PC.setOption(option_BI_PC);
+        
+        var myChart_BI_Mobile = echarts.init(document.getElementById('Baidu_Index_Mobile')); 
+        
+        var option_BI_Mobile = {
+    title : {
+        text: '百度指数(移动端)',
+        subtext: '关键词搜索热度'
+    },
+    tooltip : {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['新浪微博','微信']
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            magicType : {show: true, type: ['line', 'bar']},
+            restore : {show: true},
+            saveAsImage : {show: true},
+            dataZoom : {show: true}
+        }
+    },
+    calculable : true,
+    dataZoom : {
+        show : true,
+        realtime : true,
+        start : 0,
+        end : 100
+    },
+    xAxis : [
+        {
+            type : 'category',
+            boundaryGap : false,
+            data : ['2011.1','2011.7','2012.1','2012.7','2013.1','2013.7','2014.1','2014.7','2015.1','2015.7']
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    series : [
+        {
+            name:'新浪微博',
+            type:'line',
+            smooth:true,
+            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+            data:[24861,48017,60582,63612,84085,60630,77267,66254,96217,121301]
+        },
+        {
+            name:'微信',
+            type:'line',
+            smooth:true,
+            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+            data:[0,65716,184404,195875,232882,272268,304190,424788,480401,658978]
+        }
+    ]
+};
+        // 为echarts对象加载数据 
+        myChart_BI_Mobile.setOption(option_BI_Mobile);
         
         myChart_CM =  echarts.init(document.getElementById('China_Map')); 
         var option_CM = {
@@ -180,40 +307,38 @@
                 emphasis:{label:{show:true}}
             },
             data:[
-                {name: '北京',value: Math.round(Math.random()*1000)},
-                {name: '天津',value: Math.round(Math.random()*1000)},
-                {name: '上海',value: Math.round(Math.random()*1000)},
-                {name: '重庆',value: Math.round(Math.random()*1000)},
-                {name: '河北',value: Math.round(Math.random()*1000)},
-                {name: '河南',value: Math.round(Math.random()*1000)},
-                {name: '云南',value: Math.round(Math.random()*1000)},
-                {name: '辽宁',value: Math.round(Math.random()*1000)},
-                {name: '黑龙江',value: Math.round(Math.random()*1000)},
-                {name: '湖南',value: Math.round(Math.random()*1000)},
-                {name: '安徽',value: Math.round(Math.random()*1000)},
-                {name: '山东',value: Math.round(Math.random()*1000)},
-                {name: '新疆',value: Math.round(Math.random()*1000)},
-                {name: '江苏',value: Math.round(Math.random()*1000)},
-                {name: '浙江',value: Math.round(Math.random()*1000)},
-                {name: '江西',value: Math.round(Math.random()*1000)},
-                {name: '湖北',value: Math.round(Math.random()*1000)},
-                {name: '广西',value: Math.round(Math.random()*1000)},
-                {name: '甘肃',value: Math.round(Math.random()*1000)},
-                {name: '山西',value: Math.round(Math.random()*1000)},
-                {name: '内蒙古',value: Math.round(Math.random()*1000)},
-                {name: '陕西',value: Math.round(Math.random()*1000)},
-                {name: '吉林',value: Math.round(Math.random()*1000)},
-                {name: '福建',value: Math.round(Math.random()*1000)},
-                {name: '贵州',value: Math.round(Math.random()*1000)},
-                {name: '广东',value: Math.round(Math.random()*1000)},
-                {name: '青海',value: Math.round(Math.random()*1000)},
-                {name: '西藏',value: Math.round(Math.random()*1000)},
-                {name: '四川',value: Math.round(Math.random()*1000)},
-                {name: '宁夏',value: Math.round(Math.random()*1000)},
-                {name: '海南',value: Math.round(Math.random()*1000)},
-                {name: '台湾',value: Math.round(Math.random()*1000)},
-                {name: '香港',value: Math.round(Math.random()*1000)},
-                {name: '澳门',value: Math.round(Math.random()*1000)}
+                {name: '北京',value: 1164},
+                {name: '天津',value: 97},
+                {name: '上海',value: 784},
+                {name: '重庆',value: 351},
+                {name: '河北',value: 265},
+                {name: '河南',value: 358},
+                {name: '云南',value: 137},
+                {name: '辽宁',value: 270},
+                {name: '黑龙江',value: 183},
+                {name: '湖南',value: 253},
+                {name: '安徽',value: 240},
+                {name: '山东',value: 436},
+                {name: '新疆',value: 68},
+                {name: '江苏',value: 471},
+                {name: '浙江',value: 513},
+                {name: '江西',value: 177},
+                {name: '湖北',value: 235},
+                {name: '广西',value: 193},
+                {name: '甘肃',value: 72},
+                {name: '山西',value: 181},
+                {name: '内蒙古',value: 86},
+                {name: '陕西',value: 254},
+                {name: '吉林',value: 107},
+                {name: '福建',value: 307},
+                {name: '贵州',value: 112},
+                {name: '广东',value: 1281},
+                {name: '青海',value: 18},
+                {name: '西藏',value: 18},
+                {name: '四川',value: 376},
+                {name: '宁夏',value: 27},
+                {name: '海南',value: 54},
+                {name: '台湾',value: 37}
             ]
         },
         {
@@ -225,40 +350,38 @@
                 emphasis:{label:{show:true}}
             },
             data:[
-                {name: '北京',value: Math.round(Math.random()*1000)},
-                {name: '天津',value: Math.round(Math.random()*1000)},
-                {name: '上海',value: Math.round(Math.random()*1000)},
-                {name: '重庆',value: Math.round(Math.random()*1000)},
-                {name: '河北',value: Math.round(Math.random()*1000)},
-                {name: '河南',value: Math.round(Math.random()*1000)},
-                {name: '云南',value: Math.round(Math.random()*1000)},
-                {name: '辽宁',value: Math.round(Math.random()*1000)},
-                {name: '黑龙江',value: Math.round(Math.random()*1000)},
-                {name: '湖南',value: Math.round(Math.random()*1000)},
-                {name: '安徽',value: Math.round(Math.random()*1000)},
-                {name: '山东',value: Math.round(Math.random()*1000)},
-                {name: '新疆',value: Math.round(Math.random()*1000)},
-                {name: '江苏',value: Math.round(Math.random()*1000)},
-                {name: '浙江',value: Math.round(Math.random()*1000)},
-                {name: '江西',value: Math.round(Math.random()*1000)},
-                {name: '湖北',value: Math.round(Math.random()*1000)},
-                {name: '广西',value: Math.round(Math.random()*1000)},
-                {name: '甘肃',value: Math.round(Math.random()*1000)},
-                {name: '山西',value: Math.round(Math.random()*1000)},
-                {name: '内蒙古',value: Math.round(Math.random()*1000)},
-                {name: '陕西',value: Math.round(Math.random()*1000)},
-                {name: '吉林',value: Math.round(Math.random()*1000)},
-                {name: '福建',value: Math.round(Math.random()*1000)},
-                {name: '贵州',value: Math.round(Math.random()*1000)},
-                {name: '广东',value: Math.round(Math.random()*1000)},
-                {name: '青海',value: Math.round(Math.random()*1000)},
-                {name: '西藏',value: Math.round(Math.random()*1000)},
-                {name: '四川',value: Math.round(Math.random()*1000)},
-                {name: '宁夏',value: Math.round(Math.random()*1000)},
-                {name: '海南',value: Math.round(Math.random()*1000)},
-                {name: '台湾',value: Math.round(Math.random()*1000)},
-                {name: '香港',value: Math.round(Math.random()*1000)},
-                {name: '澳门',value: Math.round(Math.random()*1000)}
+                {name: '北京',value: 7042},
+                {name: '天津',value: 1377},
+                {name: '上海',value: 5351},
+                {name: '重庆',value: 1628},
+                {name: '河北',value: 2417},
+                {name: '河南',value: 2969},
+                {name: '云南',value: 970},
+                {name: '辽宁',value: 2753},
+                {name: '黑龙江',value: 1624},
+                {name: '湖南',value: 1981},
+                {name: '安徽',value: 1838},
+                {name: '山东',value: 4002},
+                {name: '新疆',value: 689},
+                {name: '江苏',value: 5036},
+                {name: '浙江',value: 4756},
+                {name: '江西',value: 1224},
+                {name: '湖北',value: 2476},
+                {name: '广西',value: 1292},
+                {name: '甘肃',value: 518},
+                {name: '山西',value: 1281},
+                {name: '内蒙古',value: 800},
+                {name: '陕西',value: 2120},
+                {name: '吉林',value: 1193},
+                {name: '福建',value: 2801},
+                {name: '贵州',value: 650},
+                {name: '广东',value: 12760},
+                {name: '青海',value: 184},
+                {name: '西藏',value: 142},
+                {name: '四川',value: 3117},
+                {name: '宁夏',value: 247},
+                {name: '海南',value: 449},
+                {name: '台湾',value: 307}
             ]
         }
     ]
@@ -268,7 +391,7 @@
         myChart_G =  echarts.init(document.getElementById('Gender')); 
         var option_G = {
             title : {
-        text: '用户性别比例',
+        text: '用户性别比例(%)',
         subtext: '新浪微博和微信的男女性用户数量',
         x:'left'
     },
@@ -309,7 +432,7 @@
             name:'男性用户',
             type:'bar',
             itemStyle : { normal: {label : {show: true, position: 'inside'}}},
-            data:[200, 170]
+            data:[42.95,35.23]
         },
         {
             name:'女性用户',
@@ -318,7 +441,7 @@
             itemStyle: {normal: {
                 label : {show: true, position: "inside"}
             }},
-            data:[320, 302]
+            data:[57.05,64.77]
         }
     ]
 };
@@ -385,12 +508,12 @@
                 }
             },
             data:[
-                {value:335, name:'12岁以下'},
-                {value:310, name:'12-18岁'},
-                {value:234, name:'19-24岁'},
-                {value:135, name:'25-34岁'},
-                {value:1548, name:'35-50岁'},
-                {value:1548, name:'51-80岁'}
+                {value:4.52, name:'12岁以下'},
+                {value:25.75, name:'12-18岁'},
+                {value:33.29, name:'19-24岁'},
+                {value:21.48, name:'25-34岁'},
+                {value:12.57, name:'35-50岁'},
+                {value:2.40, name:'51-80岁'}
             ]
         }
     ]
@@ -458,12 +581,12 @@
                 }
             },
             data:[
-                {value:335, name:'12岁以下'},
-                {value:310, name:'12-18岁'},
-                {value:234, name:'19-24岁'},
-                {value:135, name:'25-34岁'},
-                {value:1548, name:'35-50岁'},
-                {value:1548, name:'51-80岁'}
+                {value:5.15, name:'12岁以下'},
+                {value:14.67, name:'12-18岁'},
+                {value:36.17, name:'19-24岁'},
+                {value:32.88, name:'25-34岁'},
+                {value:9.59, name:'35-50岁'},
+                {value:1.551, name:'51-80岁'}
             ]
         }
     ]
@@ -493,11 +616,11 @@
     polar : [
         {
             indicator : [
-                {text : '搞笑幽默', max  : 100},
-                {text : '视频电影', max  : 100},
-                {text : '美食', max  : 100},
-                {text : '名人明星', max  : 100},
-                {text : '自媒体', max  : 100},
+                {text : '搞笑幽默', max  : 2000},
+                {text : '视频电影', max  : 2000},
+                {text : '美食', max  : 2000},
+                {text : '名人明星', max  : 2000},
+                {text : '自媒体', max  : 2000},
             ],
             radius : 130
         }
@@ -515,7 +638,7 @@
             },
             data : [
                 {
-                    value : [97, 42, 88, 94, 90, 86],
+                    value : [1788, 1142, 884, 1108, 920],
                     name : '新浪微博'
                 }
             ]
@@ -547,11 +670,11 @@
     polar : [
         {
             indicator : [
-                {text : '搞笑幽默', max  : 100},
-                {text : '娱乐', max  : 100},
-                {text : '美食', max  : 100},
-                {text : '名人明星', max  : 100},
-                {text : '旅行', max  : 100},
+                {text : '搞笑幽默', max  : 10000},
+                {text : '娱乐', max  : 10000},
+                {text : '美食', max  : 10000},
+                {text : '名人明星', max  : 10000},
+                {text : '旅行', max  : 10000},
             ],
             radius : 130
         }
@@ -569,7 +692,7 @@
             },
             data : [
                 {
-                    value : [97, 42, 88, 94, 90, 86],
+                    value : [6438, 5601, 9768, 6924, 9241],
                     name : '微信'
                 }
             ]
